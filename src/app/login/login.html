@@ -1,0 +1,53 @@
+<form [formGroup]="form" >
+<div class="login">
+    <div class="login-first">
+        <div class="login-second">
+    <div class="left">
+
+    </div>
+<div class="rightp">
+
+<div class="rightbottom">
+    <div class="circlep">AZ</div>
+
+</div>
+<div class="rightbottom">
+
+ <p class="content">Organizo</p>
+
+ </div>
+<div class="rightbottom">
+    <div class="login-heading">
+        <div class="contentp">
+        <div *ngIf="clicklogin">
+
+        <p  class="texta">Email</p>
+        <input formControlName="email" class="inputg"type="text">
+        <p class="texta">Password</p>
+        <input formControlName="password" class="inputg" type="password">
+
+        </div>
+
+<div *ngIf="clicknewuser">
+ <p  class="texta">Email</p>
+        <input   formControlName="email" class="inputg"type="text">
+        <p class="texta">Password</p>
+        <input   formControlName="password" class="inputg" type="password">
+
+       </div>
+
+        <div class="contentdown">
+        <button  *ngIf="clicklogin" class="loginp" (click)="finalsubmit()">Login</button>
+        <button *ngIf="clicknewuser" class="loginp" (click)="finalsubmit()">Register</button>
+        <p  *ngIf="clicklogin" class="newcontent" (click)="newuser()">New User</p>
+        <p *ngIf="clicknewuser" class="newcontent" (click)="loginb()">Account Already Exist</p>
+
+<div>
+        </div> 
+    </div>
+    </div>
+</div>
+        </div>
+
+    </div>
+</div>
