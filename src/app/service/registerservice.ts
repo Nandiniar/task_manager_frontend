@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Register } from '../class/register';
 import { Observable } from 'rxjs';
 import { Loginresponse } from '../class/loginresponse';
+import { HttpHeaders } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -13,6 +14,9 @@ private loginurl="http://localhost:8080/loginuser";
   constructor(private httpclient:HttpClient) { }
 
   registeruser(user:Register):Observable<Register>{
+        const headers = new HttpHeaders({
+      'Content-Type': 'application/json'
+    });
 return this.httpclient.post<Register>(
           
   this.url,
@@ -21,13 +25,15 @@ return this.httpclient.post<Register>(
     email:  user.email,
     password: user.password
 
-  }
+  },
+   { headers: headers,
+     withCredentials: true }
 )
         
   }
 
  loginuser(user:Register): Observable<{ message: string }> {
-  return this.httpclient.post<{ message: string }>(this.loginurl, user);
+  return this.httpclient.post<{ message: string }>(this.loginurl, user,{ withCredentials: true });
 }
 
   

@@ -1,0 +1,73 @@
+<form [formGroup]="form">
+
+<div class="task-card" >
+ 
+  <input type="text" class="task-input" formControlName="title" placeholder="Name of task">
+     <div *ngIf="form.get('title')?.touched " class="error">
+                  <span *ngIf="form.get('title')?.errors?.['required']">This field is required.</span>
+                  </div>
+  <div class="task-options">
+    <div class="option-group">
+
+      <i class="bi bi-bell"></i> Notification*:
+      <button class="current">{{current}}</button>
+      <button class="toggle" (click)="toggledropdow()">+</button>
+      <div class="dropdown" *ngIf="dropdownvisible">
+        <button *ngFor="let o of options" (click)="selectoptionsnotific(o)">
+          {{o}}
+        </button>
+      </div>
+      <input type="hidden" formControlName="notification">
+        <div *ngIf="form.get('notification')?.touched " class="error">
+                  <span *ngIf="form.get('notification')?.errors?.['required']">This field is required.</span>
+                  </div>
+    </div>
+    <div class="option-group">
+      <i class="bi bi-flag" ></i> Priority*:
+            <button class="current">{{optionp}}</button>
+            <button class="toggle" (click)="priorityclick()">+</button>
+    
+      <div class="dropdown" *ngIf="prioritycl">
+   <button   *ngFor="let p of priority" (click)="selectoptionspriority(p)">
+{{p}}
+      </button>
+    </div>
+    <input type="hidden" formControlName="priority">
+      <div *ngIf="form.get('priority')?.touched " class="error">
+                  <span *ngIf="form.get('priority')?.errors?.['required']">This field is required.</span>
+                  </div>
+    </div>
+    <div class="option-group">
+      <span class="option-label">Due Date*:</span>
+      <input type="date" class="calendar-input" formControlName="due_date">
+        <div *ngIf="form.get('due_date')?.touched " class="error">
+                  <span *ngIf="form.get('due_date')?.errors?.['required']">This field is required.</span>
+                  </div>
+    </div>
+    <div class="option-group">
+      <i class="bi bi-tags" ></i> Label*:
+      <button class="current">{{optionl}}</button>
+                  <button class="toggle" (click)="labelclicko()">+</button>
+    
+      <div class="dropdown" *ngIf="labelclick">
+        <button *ngFor="let l of label "(click)="clickbuttonl(l)">
+          {{l}}
+          </button>
+              
+        
+          
+    </div>
+    <input type="hidden" formControlName="label">
+    <div *ngIf="form.get('label')?.touched " class="error">
+                  <span *ngIf="form.get('label')?.errors?.['required']">This field is required.</span>
+                  </div>
+
+  </div>
+  <label >Description*</label>
+  <textarea rows="4" class="desc-input" formControlName="description"></textarea>
+  <button class="create-btn"(click)=savetask()>Create task</button>
+     <div *ngIf="form.get('description')?.touched " class="error">
+                  <span *ngIf="form.get('description')?.errors?.['required']">This field is required.</span>
+                  </div>
+
+</div>
