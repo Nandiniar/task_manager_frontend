@@ -12,6 +12,7 @@ export const routes: Routes = [
 
     {path:'dashboard',component:Dashboard},
     {path:'logout',component:Logout},
+
     {path:'mytasks',component:Mytasks},
     {path:'notifications',component:Notifications},
     {path:'settings',component:Settings},

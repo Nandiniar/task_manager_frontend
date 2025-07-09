@@ -1,1 +1,30 @@
 <app-innerpart></app-innerpart>
+
+<table class="task-table">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Priority</th>
+      <th>Due Date</th>
+      <th>Label</th>
+      <th>Notification</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let t of tasks">
+      <td>{{ t.title }}</td>
+      <td>{{ t.priority }}</td>
+      <td>{{ t.due_date | date: 'mediumDate' }}</td>
+      <td>{{ t.label }}</td>
+      <td>{{ t.notification }}</td>
+      <td>
+        <button class="edit-btn" (click)="editbutton(t)">Edit</button>
+        <div *ngIf="showedit" class="edit-task-form">
+            <h3>Edit task</h3>
+        </div>
+        <button class="delete-btn" (click)="deletetaskwork(t.id)">Delete</button>
+      </td>
+    </tr>
+  </tbody>
+</table>

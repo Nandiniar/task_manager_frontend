@@ -1,0 +1,110 @@
+/* Reset default table styles */
+.task-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  font-family: Arial, sans-serif;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-left:10px;
+
+}
+
+/* Header styles */
+.task-table thead {
+  background-color: #ffd700; /* Yellow background */
+  color: #333; /* Dark text for contrast */
+}
+
+.task-table th {
+  padding: 12px 15px;
+  text-align: left;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+
+/* Body styles */
+.task-table tbody tr {
+  border-bottom: 1px solid #ddd;
+}
+
+.task-table tbody tr:nth-child(even) {
+  background-color: #f9f9f9; /* Light gray for alternating rows */
+}
+
+.task-table tbody tr:hover {
+  background-color: #fffacd; /* Light yellow on hover */
+}
+
+.task-table td {
+  padding: 12px 15px;
+  font-size: 14px;
+  color: #333;
+}
+
+/* Button styles */
+.edit-btn, .delete-btn {
+  padding: 8px 12px;
+  margin-right: 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s;
+}
+
+.edit-btn {
+  background-color: #ffd700; /* Yellow */
+  color: #333;
+}
+
+.edit-btn:hover {
+  background-color: #ffca28; /* Darker yellow */
+}
+
+.delete-btn {
+  background-color: #ff4d4d; /* Red for delete */
+  color: #fff;
+}
+
+.delete-btn:hover {
+  background-color: #e63939; /* Darker red */
+}
+
+/* Error message */
+.error-message {
+  color: #ff4d4d;
+  font-size: 16px;
+  text-align: center;
+  margin: 20px 0;
+}
+
+/* Loading message */
+.loading {
+  color: #333;
+  font-size: 16px;
+  text-align: center;
+  margin: 20px 0;
+}
+
+/* No tasks message */
+.no-tasks {
+  text-align: center;
+  color: #666;
+  font-size: 16px;
+  margin: 20px 0;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .task-table th, .task-table td {
+    padding: 8px;
+    font-size: 12px;
+  }
+
+  .edit-btn, .delete-btn {
+    padding: 6px 10px;
+    font-size: 12px;
+  }
+}

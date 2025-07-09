@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
 
 import { CommonModule } from '@angular/common';
-import { Mytasks } from '../mytasks/mytasks';
+
 import { Createnewtask } from "../../component/createnewtask/createnewtask";
 
 @Component({
   selector: 'app-innerpart',
-  imports: [CommonModule, Mytasks, Createnewtask],
+  imports: [CommonModule, Createnewtask],
   templateUrl: './innerpart.html',
   styleUrl: './innerpart.css'
 })

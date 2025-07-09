@@ -9,6 +9,9 @@ import { HttpHeaders } from '@angular/common/http';
 })
 export class TaskTable {
   public taskurl = "http://localhost:8080/create-task";
+  public gettaskurl="http://localhost:8080/show-task";
+  public deletetaskurl="http://localhost:8080/delete-task";
+  public edittaskurl="http://localhost:8080/update-task";
 
   constructor(private httpclient: HttpClient) { }
 
@@ -30,4 +33,21 @@ export class TaskTable {
         withCredentials: true } // Include credentials (cookies) in the request
     );
   }
+
+  getTask():Observable<any>{
+    return this.httpclient.get(this.gettaskurl,{withCredentials:true});
+  }
+
+  deletetask(taskid:number):Observable<any>{
+    return this.httpclient.delete(`${this.deletetaskurl}/${taskid}`,{
+      withCredentials:true
+    });
+  }
+  edittask(taskid:number,taskclass:any){
+    return this.httpclient.put(`${this.edittask}/${taskid}`,{
+      withCredentials:true
+    })
+  }
+
+
 }
