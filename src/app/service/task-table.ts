@@ -44,7 +44,7 @@ export class TaskTable {
     });
   }
   edittask(taskid:number,taskclass:any){
-    return this.httpclient.put(`${this.edittask}/${taskid}`,{
+    return this.httpclient.put(`${this.edittaskurl}/${taskid}`,{
       withCredentials:true
     })
   }

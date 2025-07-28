@@ -21,7 +21,31 @@
       <td>
         <button class="edit-btn" (click)="editbutton(t)">Edit</button>
         <div *ngIf="showedit" class="edit-task-form">
+          <div class="task">
             <h3>Edit task</h3>
+            <form [formGroup]="editForm" (ngSubmit)="updateTask(selectedtask.id)">
+      <label>Title:</label>
+      <input formControlName="title" type="text"><br>
+      
+      <label>Description:</label>
+      <input formControlName="description" type="text"><br>
+      
+      <label>Due Date:</label>
+      <input formControlName="due_date" type="date"><br>
+      
+      <label>Priority:</label>
+      <input formControlName="priority" type="text"><br>
+      
+      <label>Label:</label>
+      <input formControlName="label" type="text"><br>
+      
+      <label>Notification:</label>
+      <input formControlName="notification" type="text"><br><br>
+      
+      <button type="submit" class="edit-btn">Update</button>
+      <button type="button" class="delete-btn" (click)="cancelEdit()">Cancel</button>
+    </form>
+            </div>
         </div>
         <button class="delete-btn" (click)="deletetaskwork(t.id)">Delete</button>
       </td>
