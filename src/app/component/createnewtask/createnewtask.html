@@ -66,6 +66,8 @@
   <label >Description*</label>
   <textarea rows="4" class="desc-input" formControlName="description"></textarea>
   <button class="create-btn"(click)=savetask()>Create task</button>
+
+
      <div *ngIf="form.get('description')?.touched " class="error">
                   <span *ngIf="form.get('description')?.errors?.['required']">This field is required.</span>
                   </div>

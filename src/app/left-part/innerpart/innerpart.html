@@ -13,9 +13,14 @@
 <app-createnewtask></app-createnewtask>
     </div>
 
-    <i class="bi bi-envelope icon-button my-e"></i>
-    <i class="bi bi-person-circle icon-button my-p"></i>
+    <i class="bi bi-envelope icon-button my-e" ></i>
+    <div class="profilecontainer">
+    <i class="bi bi-person-circle icon-button my-p"  (click)="profilesection()"></i>
   </div>
+  </div>
+    <div *ngIf="profileopen" class="profileopen" >
+      <app-profile></app-profile>
+    </div>
 </div>
 <!-- <div class="showtask" *ngIf="shownewtask">
     <div class="task-header">

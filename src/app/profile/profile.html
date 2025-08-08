@@ -1,0 +1,41 @@
+
+  <h2 class="profile-header">Profile</h2>
+
+  <div class="section">
+    <label class="section-label">Profile photo</label>
+    <div class="photo-area">
+      <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Profile" class="profile-img" />
+      <div>
+        <button type="button" class="upload-btn">+ Upload photo</button>
+        <p class="upload-hint">Supported formats: jpg, gif or png.<br>Max file size: 500k.</p>
+      </div>
+    </div>
+  </div>
+
+  <form [formGroup]="form">
+    <div class="section">
+      <label class="section-label">UserName</label>
+     
+      <input class="input-field" formControlName="username" type="text" placeholder="Type your name here" />
+    </div>
+
+        <div class="section">
+      <label class="section-label">Email</label>
+     
+      <input class="input-field" formControlName="email" type="email" placeholder="Email" />
+    </div>
+
+    <!-- <div class="section email-section">
+      <label class="section-label">Email address</label>
+      <div class="email-row">
+        <span class="email-text">{{ form.get('email')?.value }}</span>
+        <button type="button" class="email-btn">Change email address</button>
+      </div>
+    </div> -->
+
+
+    <div class="button-row">
+      <button type="button" class="cancel-btn">Cancel</button>
+      <button type="submit" class="save-btn">✓ Save changes</button>
+    </div>
+</form>

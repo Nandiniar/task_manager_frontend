@@ -44,7 +44,13 @@ export class TaskTable {
     });
   }
   edittask(taskid:number,taskclass:any){
-    return this.httpclient.put(`${this.edittaskurl}/${taskid}`,{
+  const headers =new HttpHeaders(
+    {
+      "Content-type":"application/json"
+    }
+  )
+    return this.httpclient.put(`${this.edittaskurl}/${taskid}`,
+      taskclass,{
       withCredentials:true
     })
   }
